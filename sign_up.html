@@ -38,39 +38,87 @@ body{
 </ul>
 </div>
 
-<div><center>
-<form action="" method="POST">
-		<br><label>Name<br>
-		<input type="text" name="name">
-		</label>
-		
-		<br><label>
-		Email<br>
-		<input type="email" name="email">
-		</label>
-		
-		<br><label>
-		Password<br>
-		<input type="password" name="password">
-		</label>
-		
-		<br><label>Gender<br>
-		<select id="position">
-			<option value="barista">Male</option>
-			<option value="junior manager">Female</option>
-		</select></label>
-		
-		<br><label>Upload your photo<br>
-		<input type="file" name="photo"></label>
 
 
-		<br><br><button>Sign Up!</button>
 
+<br><br>
+	<center>
+	<fieldset style="width: 50%">
+		<form method="post" action="">
+			<table cellpadding="2" cellspacing="2" border="0">
+				<tr>
+					<td>Username</td>
+					<td> <input type="text" name="username"></td>
 
-	</form></center></div>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				
+				<tr>
+					<td> &nbsp;</td>
+					<td><input style="color:red" type="submit" name="login" value="Login"></td>
+				</tr>
+			</table>
+		</form></fieldset>
+		<br><br>
+			
+			<fieldset style="width: 50%">
+		<legend><br><br><h4><b><font face="Cursive" color="black">Not a user yet? Sign up here! </font></b></h4></legend>
+		<form method="post" enctype="multipart/form-data">
+			<table cellpadding="2" cellspacing="2" border="0">
+				<tr>
+					<td>First name : </td>
+					<td> <input type="text" name="firstname"></td>
+				</tr>
+				<tr>
+					<td>Last name : </td>
+					<td><input type="text" name="lastname"></td>
+				</tr>
+				<tr>
+					<td>Email : </td>
+					<td> <input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>Phone Number : </td>
+					<td> <input type="text" name="phone"></td>
+				</tr>
+				<tr>
+					<td>NRIC number: </td>
+					<td> <input type="text" name="NRIC_no"></td>
+				</tr>
+				<tr>
+					<td>Username : </td>
+					<td> <input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password : </td>
+					<td> <input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>Your profile picture:</td>
+					<td><input type="hidden" name="size" value="1000000"></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><div>
+  						<input type="file" name="image">
+					</div></td>
+				</tr>
+				<tr>
+					<td> &nbsp;</td>
+					<td><center><input style="color:red" type="submit" name="signup" value="Sign up"></center></td>
+				</tr>
+			</table>
+		</form>
+		</fieldset>
+	</center>			 
+
 
 </body>
 
+<br><br>
 <footer style="padding: 50px; margin: auto;">
 	Copyright &copy; WKES2109
 	<br> <a href="mailto:areen@fendy.com">areen@fendy.com</a>
