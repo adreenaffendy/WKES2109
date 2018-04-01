@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+<title>Personal Finance Management</title>
+<link rel="stylesheet"
+href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<meta charset="utf-8">
+<link rel="stylesheet" href="copycss.css">
+</head>
+
+<style>
+body{
+    margin-top: 50px; /* Add a top margin to avoid content overlay */
+    margin-bottom: 50px;
+}
+* {
+    box-sizing: border-box;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+<body>
+
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="index.html" class="w3-margin-left"><b>WKES2109</b> Project</a>
+    </li>
+    
+<!-- Float links to the right. Hide them on small screens -->
+	<li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
+      		<p onclick="document.getElementById('id01').style.display='block'">Login</p>
+	</li>
+
+</ul>
+</div>
+
+<div id="id01" class="w3-modal">
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding: 32px; max-width: 600px">
+		<center>
+	<fieldset style="width: 80%">
+		<form method="post" action="">
+			<table cellpadding="2" cellspacing="2" border="0">
+				<tr>
+					<td>Username</td>
+					<td> <input type="text" name="username"></td>
+
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				
+				<tr>
+					<td> &nbsp;</td>
+					<td><input style="color:green" type="submit" name="login" value="Login"></td>
+					<td><a href="sign_up.html">Not a member? Sign Up now</a></td>
+				</tr>
+			</table>
+		</form></fieldset></center>
+	</div>
+</div>
+
+<div id="wrapper">
+
+
+<main><div style="padding: 30px; margin: auto;">
+<center>
+
+<div id="piechart" style=""><fieldset></fieldset></div>
+
+
+
+	
+</center>
+</div></main>
+
+</div>
+</body>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Category', 'Amount(RM)'],
+  ['Groceries', 200],
+  ['Entertainment', 150],
+  ['Shopping', 150],
+  ['Transport', 120],
+  ['Food/Beverages', 170]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Daily Expenses', 'width':850, 'height':600};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+	}
+</script>
+
+
+
+<div class="footer">
+<br>
+Copyright &copy; WKES2109
+	<br> <a href="mailto:areen@fendy.com">areen@fendy.com</a>
+<br>
+
+
+<br>  
+</div>
