@@ -25,7 +25,7 @@ body{
 .myForm {
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 font-size: 0.8em;
-width: 80em;
+width: 40em;
 padding: 1em;
 border: 1px solid #ccc;
 }
@@ -153,51 +153,27 @@ cursor: pointer;
 	
 	<center><form class="myForm" method="get" enctype="multipart/form-data" action="">
 
-<legend style="background-color: #D1F2EB;"><br><br><h4><b><font face="Cursive" color="black">Not a user yet? Sign up here! </font></b></h4></legend>
+<legend style="background-color: #D1F2EB; height: 3em;"><h4><b><font face="Cursive" color="black">New Goals? </font></b></h4></legend>
 <p>
-<label> First Name
-<input type="text" name="first_name" required>
+<label> Name your new goals:
+<input type="text" name="new" required>
 </label> 
 </p>
 
 <p>
-<label> Last Name
-<input type="text" name="last_name" required>
+<label> Amount to save:
+<input type="text" name="amount" required>
 </label> 
 </p>
 
 <p>
-<label>Email 
+<label>Monthly save: 
 <input type="email" name="email_address" required>
 </label>
 </p>
 
 <p>
-<label>Phone Number
-<input type="tel" name="phone_number" required>
-</label>
-</p>
-
-<p>
-<label> NRIC Number
-<input type="text" name="nric_number" required>
-</label> 
-</p>
-
-<p>
-<label> Username
-<input type="text" name="username" required>
-</label> 
-</p>
-
-<p>
-<label> Password
-<input type="password" name="password" required>
-</label> 
-</p>
-
-<p>
-<label> Your profile picture
+<label> Add pic to boost up your motivation
 <input type="hidden" name="size" value="1000000">
 <br>
 <input type="file" name="image">
@@ -205,11 +181,10 @@ cursor: pointer;
 </p>
 
 
-<p><button>Sign Up</button></p>
+<p><button>Add</button></p>
 <br><br>
 </form></center>
 
-<br><br>
 </body>
 
 <br><br>

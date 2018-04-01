@@ -32,16 +32,6 @@ body{
    color: white;
    text-align: center;
 }
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
 button {
     background-color: #4CAF50;
     color: white;
@@ -55,26 +45,6 @@ button {
 button:hover {
     opacity: 0.8;
 }
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
 .container {
     padding: 16px;
 }
@@ -149,6 +119,28 @@ span.psw {
        width: 100%;
     }
 }
+#daily {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#daily td, #daily th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#daily tr:nth-child(even){background-color: #f2f2f2;}
+
+#daily tr:hover {background-color: #ddd;}
+
+#daily th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #48C9B0;
+    color: white;
+}
 </style>
 
 <body>
@@ -199,12 +191,76 @@ span.psw {
 <main><div style="padding: 30px; margin: auto;">
 <center>
 
-<div id="piechart" style=""><fieldset></fieldset></div>
-
-
-
+<div id="piechart" style=""></div>
 	
 </center>
+
+<div class="container">
+<table id="daily">
+  <tr>
+    <th>Date</th>
+    <th>Category</th>
+    <th>Amount (RM)</th>
+    <th>Option</th>
+  </tr>
+  <tr>
+    <td>03/1/2018</td>
+    <td>Groceries</td>
+    <td>200</td>
+    <td><a href="">Edit</a> |<a href="">Delete</a></td>
+  </tr>
+  <tr>
+    <td>14/1/2018</td>
+    <td>Transport</td>
+    <td>120</td>
+    <td><a href="">Edit</a> |<a href="">Delete</a></td>
+  </tr>
+  <tr>
+    <td>15/1/2018</td>
+    <td>Entertainment</td>
+    <td>150</td>
+    <td><a href="">Edit</a> |<a href="">Delete</a></td>
+  </tr>
+  <tr>
+    <td>21/1/2018</td>
+    <td>Food/Beverages</td>
+    <td>170</td>
+    <td><a href="">Edit</a> |<a href="">Delete</a></td>
+  </tr>
+  <tr>
+    <td>28/1/2018</td>
+    <td>Shopping</td>
+    <td>150</td>
+    <td><a href="">Edit</a> |<a href="">Delete</a></td>
+  </tr>
+</table>
+</div>
+<div id="result"></div>
+
+
+<div class="container">
+
+  <br><br><br>
+  
+  <form onsubmit="return results();" method="post" action="daily.html">
+  Date: <span id="datetime"></span>
+  &nbsp;
+    Category:
+      <select name="category">
+        <option id="Groceries" value="Groceries">Groceries        </option>
+        <option id="Food/Beverages" value="Food/Beverages">Food/Beverages </option>
+        <option id="Transportation" value="Transportation">Transportation </option>
+        <option id="Shopping" value="Shopping">Shopping       </option>
+        <option id="Entertainment" value="Entertainment">Entertainment    </option>
+      </select>
+    &nbsp;
+    Amount (RM):
+    <input id="Amount" type="text" name="amount">
+    <input type="button" value="Add" onclick="collect(this.form)">
+</form>
+
+</div>
+
 </div></main>
 
 </div>
@@ -237,8 +293,11 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
-	}
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </script>
+	
 
 
 
