@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+<title>Personal Finance Management</title>
+<link rel="stylesheet"
+href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<meta charset="utf-8">
+<link rel="stylesheet" href="copycss.css">
+</head>
+
+<style>
+body{
+    margin-top: 50px; /* Add a top margin to avoid content overlay */
+    margin-bottom: 50px;
+}
+* {
+    box-sizing: border-box;
+}
+.myForm {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.8em;
+width: 80em;
+padding: 1em;
+border: 1px solid #ccc;
+}
+
+.myForm * {
+box-sizing: border-box;
+}
+
+.myForm fieldset {
+border: none;
+padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+padding: 0;
+font-weight: bold;
+}
+
+.myForm label.choice {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.myForm label {
+text-align: left;
+display: block;
+}
+
+.myForm input[type="text"],
+.myForm input[type="tel"],
+.myForm input[type="email"],
+.myForm input[type="datetime-local"],
+.myForm input[type="password"],
+.myForm select,
+.myForm textarea {
+float: right;
+width: 60%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm input[type="radio"],
+.myForm input[type="checkbox"] {
+margin-left: 40%;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background: #eee;
+border: none;
+font-weight: bold;
+margin-left: 40%;
+margin-top: 1.8em;
+}
+
+.myForm button:hover {
+background: #ccc;
+cursor: pointer;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+</style>
+
+<body>
+
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="index.html" class="w3-margin-left"><b>WKES2109</b> Project</a>
+    </li>
+    
+<!-- Float links to the right. Hide them on small screens -->
+	<li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
+      		<p onclick="document.getElementById('id01').style.display='block'">Login</p>
+	</li>
+
+</ul>
+</div>
+
+<div id="id01" class="w3-modal">
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding: 32px; max-width: 600px">
+		<center>
+	<fieldset style="width: 80%">
+		<form method="post" action="">
+			<table cellpadding="2" cellspacing="2" border="0">
+				<tr>
+					<td>Username</td>
+					<td> <input type="text" name="username"></td>
+
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				
+				<tr>
+					<td> &nbsp;</td>
+					<td><input style="color:green" type="submit" name="login" value="Login"></td>
+					<td><a href="sign_up.html">Not a member? Sign Up now</a></td>
+				</tr>
+			</table>
+		</form></fieldset></center>
+	</div>
+</div>
+
+
+
+<br><br>
+	
+	<center><form class="myForm" method="get" enctype="multipart/form-data" action="">
+
+<legend style="background-color: #f490b7;"><br><br><h3><b><font face="Cursive" color="black">Import you Daily Expenses.</h3> <h5> <br>*(Input Month or Date) </br> </h5> </font></b></legend>
+<p>
+<label> Entertaiment
+<input type="text" name="entertainment">
+</label> 
+</p>
+
+<p>
+<label> Groceries
+<input type="text" name="groceries>
+</label> 
+</p>
+
+<p>
+<label>Shopping 
+<input type="text" name="shopping">
+</label>
+</p>
+
+<p>
+<label>Transport
+<input type="text" name="transport">
+</label>
+</p>
+
+<p>
+<label> Food/Beverages
+<input type="text" name="food_beverages">
+</label> 
+</p>
+
+<p>
+<label> Monthly Income
+<input type="text" name="monthly_income">
+</label> 
+</p>
+
+<p>
+<label> Total Expenses
+<input type="text" name="total_expenses">
+</label> 
+</p>
+
+<p>
+<label> Savings
+<input type="text" name="savings">
+</label> 
+</p>
+
+
+<p>
+<label> Password
+<input type="password" name="password" required>
+</label> 
+</p>
+
+
+<p><button>Import</button></p>
+<br><br>
+</form></center>
+
+<br><br>
+</body>
+
+<br><br>
+<div class="footer">
+<br>
+Copyright &copy; WKES2109
+	<br> <a href="mailto:nazifa@hossain.com>nazifa@hossain.com</a>
+<br>
+
+
+<br>  
+</div>
