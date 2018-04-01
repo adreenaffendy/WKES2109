@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Finance Management</title>
+
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<meta charset="utf-8">
+<link rel="stylesheet" href="copycss.css">
+<style>
+body{
+    margin-top: 50px; /* Add a top margin to avoid content overlay */
+    margin-bottom: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #A3E4D7;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="index.html" class="w3-margin-left"><b>WKES2109</b> Project</a>
+    </li>
+    
+<!-- Float links to the right. Hide them on small screens -->
+  <li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
+          <p onclick="document.getElementById('id01').style.display='block'">Login</p>
+  </li>
+
+</ul>
+</div>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding: 32px; max-width: 600px">
+    <center>
+  <fieldset style="width: 80%">
+    <form method="post" action="">
+      <table cellpadding="2" cellspacing="2" border="0">
+        <tr>
+          <td>Username</td>
+          <td> <input type="text" name="username"></td>
+
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        
+        <tr>
+          <td> &nbsp;</td>
+          <td><input style="color:green" type="submit" name="login" value="Login"></td>
+          <td><a href="sign_up.html">Not a member? Sign Up now</a></td>
+        </tr>
+      </table>
+    </form></fieldset></center>
+  </div>
+</div>
+
+
+
+<br>
+
+<div class="row">
+<br><br><br>
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <h2>Home</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">View</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <h2>2019 Japan Travel</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">View</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+
+      <div class="container">
+        <h2>2020 Ireland Trip</h2>
+        <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">View</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

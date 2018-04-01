@@ -17,10 +17,92 @@ href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>
 <style>
 body{
     margin-top: 50px; /* Add a top margin to avoid content overlay */
+    margin-bottom: 50px;
 }
 * {
     box-sizing: border-box;
 }
+.myForm {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.8em;
+width: 80em;
+padding: 1em;
+border: 1px solid #ccc;
+}
+
+.myForm * {
+box-sizing: border-box;
+}
+
+.myForm fieldset {
+border: none;
+padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+padding: 0;
+font-weight: bold;
+}
+
+.myForm label.choice {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.myForm label {
+text-align: left;
+display: block;
+}
+
+.myForm input[type="text"],
+.myForm input[type="tel"],
+.myForm input[type="email"],
+.myForm input[type="datetime-local"],
+.myForm input[type="password"],
+.myForm select,
+.myForm textarea {
+float: right;
+width: 60%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm input[type="radio"],
+.myForm input[type="checkbox"] {
+margin-left: 40%;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background: #eee;
+border: none;
+font-weight: bold;
+margin-left: 40%;
+margin-top: 1.8em;
+}
+
+.myForm button:hover {
+background: #ccc;
+cursor: pointer;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
 </style>
 
 <body>
@@ -28,22 +110,21 @@ body{
 <div class="w3-top">
   <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
     <li>
-      <a href="index.php" class="w3-margin-left"><b>WKES2109</b> Project</a>
+      <a href="index.html" class="w3-margin-left"><b>WKES2109</b> Project</a>
     </li>
     
 <!-- Float links to the right. Hide them on small screens -->
-	<li class="w3-right w3-hide-small w3-dropdown-hover">
-      		<a href="ListingForm.php">Sign Up<i class="fa fa-caret-down"></i></a>
+	<li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
+      		<p onclick="document.getElementById('id01').style.display='block'">Login</p>
 	</li>
+
 </ul>
 </div>
 
-
-
-
-<br><br>
-	<center>
-	<fieldset style="width: 50%">
+<div id="id01" class="w3-modal">
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding: 32px; max-width: 600px">
+		<center>
+	<fieldset style="width: 80%">
 		<form method="post" action="">
 			<table cellpadding="2" cellspacing="2" border="0">
 				<tr>
@@ -58,68 +139,86 @@ body{
 				
 				<tr>
 					<td> &nbsp;</td>
-					<td><input style="color:red" type="submit" name="login" value="Login"></td>
+					<td><input style="color:green" type="submit" name="login" value="Login"></td>
+					<td><a href="sign_up.html">Not a member? Sign Up now</a></td>
 				</tr>
 			</table>
-		</form></fieldset>
-		<br><br>
-			
-			<fieldset style="width: 50%">
-		<legend><br><br><h4><b><font face="Cursive" color="black">Not a user yet? Sign up here! </font></b></h4></legend>
-		<form method="post" enctype="multipart/form-data">
-			<table cellpadding="2" cellspacing="2" border="0">
-				<tr>
-					<td>First name : </td>
-					<td> <input type="text" name="firstname"></td>
-				</tr>
-				<tr>
-					<td>Last name : </td>
-					<td><input type="text" name="lastname"></td>
-				</tr>
-				<tr>
-					<td>Email : </td>
-					<td> <input type="text" name="email"></td>
-				</tr>
-				<tr>
-					<td>Phone Number : </td>
-					<td> <input type="text" name="phone"></td>
-				</tr>
-				<tr>
-					<td>NRIC number: </td>
-					<td> <input type="text" name="NRIC_no"></td>
-				</tr>
-				<tr>
-					<td>Username : </td>
-					<td> <input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>Password : </td>
-					<td> <input type="password" name="password"></td>
-				</tr>
-				<tr>
-					<td>Your profile picture:</td>
-					<td><input type="hidden" name="size" value="1000000"></td>
-				</tr>
-				<tr>
-					<th></th>
-					<td><div>
-  						<input type="file" name="image">
-					</div></td>
-				</tr>
-				<tr>
-					<td> &nbsp;</td>
-					<td><center><input style="color:red" type="submit" name="signup" value="Sign up"></center></td>
-				</tr>
-			</table>
-		</form>
-		</fieldset>
-	</center>			 
+		</form></fieldset></center>
+	</div>
+</div>
 
 
+
+<br><br>
+	
+	<center><form class="myForm" method="get" enctype="multipart/form-data" action="">
+
+<legend style="background-color: #D1F2EB;"><br><br><h4><b><font face="Cursive" color="black">Not a user yet? Sign up here! </font></b></h4></legend>
+<p>
+<label> First Name
+<input type="text" name="first_name" required>
+</label> 
+</p>
+
+<p>
+<label> Last Name
+<input type="text" name="last_name" required>
+</label> 
+</p>
+
+<p>
+<label>Email 
+<input type="email" name="email_address" required>
+</label>
+</p>
+
+<p>
+<label>Phone Number
+<input type="tel" name="phone_number" required>
+</label>
+</p>
+
+<p>
+<label> NRIC Number
+<input type="text" name="nric_number" required>
+</label> 
+</p>
+
+<p>
+<label> Username
+<input type="text" name="username" required>
+</label> 
+</p>
+
+<p>
+<label> Password
+<input type="password" name="password" required>
+</label> 
+</p>
+
+<p>
+<label> Your profile picture
+<input type="hidden" name="size" value="1000000">
+<br>
+<input type="file" name="image">
+</label> 
+</p>
+
+
+<p><button>Sign Up</button></p>
+<br><br>
+</form></center>
+
+<br><br>
 </body>
 
 <br><br>
-<footer style="padding: 50px; margin: auto;">
-	Copyright &copy; WKES2109
+<div class="footer">
+<br>
+Copyright &copy; WKES2109
 	<br> <a href="mailto:areen@fendy.com">areen@fendy.com</a>
-</footer>
+<br>
+
+
+<br>  
+</div>
