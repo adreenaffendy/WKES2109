@@ -1,0 +1,270 @@
+<?php
+include 'session.php';
+
+if(isset($_GET['logout']))
+{
+    session_unregister('username');
+    header('Location:index.php');
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+<title>Personal Finance Management</title>
+<link rel="stylesheet" href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="copycss.css">
+</head>
+
+<style>
+body{
+    margin-top: 50px; /* Add a top margin to avoid content overlay */
+    margin-bottom: 150px;
+}
+* {
+    box-sizing: border-box;
+}
+.btn-group .button {
+    background-color: white; /* Green */
+    border: 1px solid white;
+    color: grey;
+    padding: 50px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+.btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+<body>
+
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="home.php" class="w3-margin-left"><b>WKES2109</b> Project</a>
+    </li>
+<!-- Float links to the right. Hide them on small screens -->
+  <li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
+          <a href="index.php" name="logout">Sign Out</a>
+  </li>
+
+</ul>
+</div>
+
+<main><div style="padding: 30px; margin: auto;">
+
+
+<div class="row">
+
+  <div class="column" style="background-color:#A3E4D7; border: 1px solid white;">
+    <h2>GOALS</h2>
+    <p>Some text..</p>
+    <center><i class="fa fa-key" style="font-size:80px;color:grey"></i></center>
+    <br><br>
+    <center><a href="goals.html"><button class="button" style="width: 40%">My Goals</button></a> &nbsp;
+    <a href="addgoal.html"><button class="button" style="width: 40%">Add new goals</button></a></center>
+  </div>
+
+  <a href="daily.html"><div class="column" style="background-color:#D1F2EB; border: 1px solid white;">
+    <h2>DAILY EXPENSES</h2>
+    <p>Some text..</p>
+    <center><i class="fa fa-calendar-check-o" style="font-size:80px;color:grey"></i></center>
+  </div></a>
+
+</div>
+
+<div class="row">
+
+  <a href="monthly expenses.html"><div class="column" style="background-color:#D1F2EB; border: 1px solid white;">
+    <h2>SUMMARY</h2>
+    <p>Some text..</p>
+    <center><i class="fa fa-bar-chart" style="font-size:80px;color:grey"></i></center>
+  </div></a>
+
+  <a href="optional.html"><div class="column" style="background-color:#A3E4D7; border: 1px solid white;">
+    <h2>FEATURES</h2>
+    <p>Some text..</p>
+    <center><i class="fa fa-pencil" style="font-size:80px;color:grey"></i></center>
+  </div></a>
+
+</div>
+
+</div></main>
+
+
+</body>
+
+<div class="footer">
+<br>
+Copyright &copy; WKES2109
+	<br> <a href="mailto:areen@fendy.com">areen@fendy.com</a>
+<br>
+
+
+<br>  
+</div>
