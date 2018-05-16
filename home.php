@@ -31,7 +31,7 @@
 
     <div class="row">
 
-      <a href="summary.php"><div class="column" style="background-color:#D1F2EB; border: 1px solid white;">
+      <a href="monthly.php"><div class="column" style="background-color:#D1F2EB; border: 1px solid white;">
         <h2>SUMMARY</h2>
         <p>See your summary of you expenditure</p>
         <center><i class="fa fa-bar-chart" style="font-size:80px;color:grey"></i></center>

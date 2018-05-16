@@ -6,8 +6,6 @@
   $query = "SELECT sum(amount) AS amount, category FROM daily WHERE user_id = '" .$_SESSION['user_id']. "' GROUP BY category";
   $result = mysqli_query($con, $query);
 
-
-
  ?>
 
 <!DOCTYPE html>
