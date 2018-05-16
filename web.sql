@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2018 at 04:40 PM
+-- Generation Time: May 16, 2018 at 04:42 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -37,19 +37,29 @@ CREATE TABLE IF NOT EXISTS `daily` (
   PRIMARY KEY (`daily_id`),
   KEY `user_id` (`user_id`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `daily`
 --
 
 INSERT INTO `daily` (`date`, `user_id`, `daily_id`, `category`, `amount`) VALUES
-('2018-05-15 16:22:59', 3, 00000000001, 'Groceries', '200.00'),
-('2018-05-15 16:22:59', 3, 00000000002, 'Transport', '120.00'),
 ('2018-05-15 16:30:33', 3, 00000000003, 'Shopping', '50.00'),
-('2018-05-15 16:30:51', 3, 00000000004, 'Groceries', '0.00'),
 ('2018-05-15 16:36:06', 3, 00000000005, 'Groceries', '0.00'),
-('2018-05-15 16:36:19', 3, 00000000006, 'Groceries', '0.00');
+('2018-05-15 16:36:19', 3, 00000000006, 'Groceries', '0.00'),
+('2018-05-16 13:12:05', 3, 00000000014, 'Entertainment', '80.00'),
+('2018-05-16 13:12:30', 3, 00000000015, 'Groceries', '20.00'),
+('2018-05-16 13:13:00', 3, 00000000016, 'Shopping', '15.00'),
+('2018-05-16 13:33:21', 15, 00000000017, 'Groceries', '0.00'),
+('2018-05-16 13:34:33', 15, 00000000018, 'Groceries', '0.00'),
+('2018-05-16 13:34:34', 15, 00000000019, 'Groceries', '0.00'),
+('2018-05-16 13:34:34', 15, 00000000020, 'Groceries', '0.00'),
+('2018-05-16 13:36:23', 15, 00000000021, 'Groceries', '0.00'),
+('2018-05-16 13:36:32', 15, 00000000022, 'Groceries', '0.00'),
+('2018-05-16 13:36:32', 15, 00000000023, 'Groceries', '50.00'),
+('2018-05-16 13:36:33', 15, 00000000024, 'Groceries', '0.00'),
+('2018-05-16 14:15:16', 16, 00000000026, 'Groceries', '0.00'),
+('2018-05-16 14:56:26', 3, 00000000027, 'Transportation', '10.00');
 
 -- --------------------------------------------------------
 
@@ -86,22 +96,25 @@ INSERT INTO `goals` (`id`, `user_id`, `name`, `monthly_budget`, `total_budget`, 
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `income` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'mhkbgd@gmail.com', 'e99a18c428cb38d5f260853678922e03'),
-(2, 'test', 'test@gmail.com', 'e99a18c428cb38d5f260853678922e03'),
-(3, 'areen', 'adreen.mohdaffendy@gmail.com', 'ebb797eaea754183967fd5de80fe63ec'),
-(4, 'areen1', 'adreen_mohdaffendy@yahoo.com', 'ebb797eaea754183967fd5de80fe63ec');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `income`) VALUES
+(1, 'admin', 'mhkbgd@gmail.com', 'e99a18c428cb38d5f260853678922e03', '1550.00'),
+(2, 'test', 'test@gmail.com', 'e99a18c428cb38d5f260853678922e03', '1220.00'),
+(3, 'areen', 'adreen.mohdaffendy@gmail.com', 'ebb797eaea754183967fd5de80fe63ec', '3440.00'),
+(14, 'ayeen', 'aliarogi@gmail.com', 'ebb797eaea754183967fd5de80fe63ec', '55550.00'),
+(15, 'jimin', 'jimin@bts', 'ebb797eaea754183967fd5de80fe63ec', '111110.00'),
+(16, 'jimin1', 'jimin@bts111', 'ebb797eaea754183967fd5de80fe63ec', '1233340.00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
