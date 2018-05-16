@@ -2,6 +2,7 @@
 
   include('server-registration.php');
   include('header.php');
+  include 'connect.php';
 
 
 
@@ -44,3 +45,4 @@
   </form>
 </body>
 </html>
+

@@ -16,7 +16,7 @@
 <div class="w3-top">
   <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
     <li>
-      <a href="index.php" class="w3-margin-left"><b>WKES2109</b> Project</a>
+      <a href="" class="w3-margin-left"><b>WKES2109</b> Project</a>
     </li>
 <!-- Float links to the right. Hide them on small screens -->
 

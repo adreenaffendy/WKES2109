@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'connect.php';
 // initializing variables
 $username = "";
 $email    = "";
@@ -49,9 +49,11 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO users (username, email, password) 
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
+
+
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: home.php');
   }
 }
 
@@ -75,7 +77,7 @@ if (isset($_POST['login_user'])) {
 
       $data = mysqli_fetch_assoc($results);
       $_SESSION['username'] = $username;
-      $_SESSION['user_id'] = $data['id'];
+      $_SESSION['user_id'] = $data['user_id'];
       $_SESSION['success'] = "You are now logged in";
       header('location: home.php');
     }else {
