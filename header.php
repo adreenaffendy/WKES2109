@@ -30,7 +30,7 @@
 		  </li>
 
     	<li class="w3-right w3-hide-small w3-dropdown-hover" style="padding-right: 10px;">
-	         <p>Welcome <?php echo $_SESSION['username']; ?></p>
+	         <p><a href="home.php">Welcome <?php echo $_SESSION['username']; ?></a></p>
 		  </li>
 		  
     <?php endif ?>

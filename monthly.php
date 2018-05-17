@@ -5,11 +5,13 @@
   include 'connect.php';
 
 
-  $query1 = "SELECT income from users where user_id = '" .$_SESSION['user_id']. "' ";
-  $income = mysqli_query($con, $query1);
+  $query1 = "SELECT users.income, daily.category, SUM( daily.amount ) as amount FROM users JOIN daily WHERE users.user_id = '" .$_SESSION['user_id']. "' ";
+  $result = mysqli_query($con, $query1);
 
-  $query2 = "SELECT sum(amount) as amount from daily where user_id = '" .$_SESSION['user_id']. "' ";
-  $actual = mysqli_query($con, $query2);
+  if ($result->num_rows > 0) {
+    while($row = mysqli_fetch_array($result))
+  {
+
 
 
  ?>
@@ -21,6 +23,10 @@
 <head>
 <title>Personal Finance Management</title>
 </head>
+
+<body>
+
+<div id="wrapper">
 
 <main><div style="padding: 30px; margin: auto;">
 <center>
@@ -40,8 +46,8 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Type', 'Amount(RM)'],
-  ['Income', <?php echo $income; ?>],
-  ['Actual Expenses', <?php echo $actual; ?>],
+  ['Income', <?php echo $row["income"]; ?>],
+  ['Actual Expenses', <?php echo $row["amount"]; } }?>],
 ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -52,7 +58,9 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
-</div></main>
+
+</div></main></div>
+</body>
 </html>
 
 <?php include('footer.php'); ?>

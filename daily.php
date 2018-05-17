@@ -12,7 +12,30 @@
 <html lang="en">
 
 
-
+<script src="jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+<script src="bootstrap.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="css/responsive.bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
+                <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <!-- Loader -->
+        <link rel="stylesheet" href="css/loader.css">
+        <script src="js/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" type="text/css" href="dashboard/vendor/font-awesome/css/font-awesome.min.css">
 <head>
 <title>Personal Finance Management</title>
 <style>
@@ -176,7 +199,7 @@ while ($row = mysqli_fetch_assoc($table)) {
     <td><?php echo $row["date"]?></td>
     <td><?php echo $row["category"]?></td>
     <td><?php echo $row["amount"]?></td>
-    <td><a href='' name="edit_daily">Edit</a> |<?php echo "<a href='delete_daily.php?daily_id=". $row["daily_id"]."' method='get'>";?>Delete</a></td>
+    <td><?php echo "<a href='edit_daily.php?daily_id=". $row["daily_id"]."' method='get'>";?>Edit</button></a> |<?php echo "<a href='delete_daily.php?daily_id=". $row["daily_id"]."' method='get'>";?>Delete</a></button></td>
   </tr>
 
 
@@ -210,7 +233,11 @@ while ($row = mysqli_fetch_assoc($table)) {
 
 </div>
 
-</div></main>
+</div>
+
+
+
+</main>
 
 </div>
 </body>
@@ -262,9 +289,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </script>
 	
 
-
-<?php include('footer.php'); ?>
-
 <?php
 //session_start();
 include 'connect.php';
@@ -284,7 +308,7 @@ if(isset($_POST['add_daily']))
         echo('Could not enter data: ' . mysql_error());
     }
     else {
-        echo "  <div class='w3-modal-content w3-card-4 w3-animate-zoom' style='padding:32px;max-width:600px'>
+        echo "<div class='w3-modal-content w3-card-4 w3-animate-zoom' style='padding:32px;max-width:600px'>
             <div class='w3-container w3-white w3-center'>
                 <h1 class='w3-wide'>Awesome</h1>
                 <p>You just add your daily expenses.</p>
@@ -302,3 +326,5 @@ if(isset($_POST['add_daily']))
       
 }
 ?>
+
+<?php include('footer.php'); ?>
