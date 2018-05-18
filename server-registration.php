@@ -25,6 +25,7 @@ if (isset($_POST['reg_user'])) {
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
+  if (empty($monthly_income)) { array_push($errors, "Monthly Income is required"); }
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
