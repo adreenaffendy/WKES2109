@@ -5,7 +5,7 @@
   include 'connect.php';
 
 
-  $query1 = "SELECT users.income, daily.category, SUM( daily.amount ) as amount FROM users JOIN daily WHERE users.user_id = '" .$_SESSION['user_id']. "' ";
+  $query1 = "SELECT users.income, daily.category, SUM( daily.amount ) as amount FROM users JOIN daily WHERE MONTH( daily.DATE ) = MONTH( CURRENT_DATE( ) ) AND YEAR( daily.DATE ) = YEAR( CURRENT_DATE( ) ) and users.user_id = '" .$_SESSION['user_id']. "' ";
   $result = mysqli_query($con, $query1);
 
   if ($result->num_rows > 0) {
@@ -29,6 +29,9 @@
 <div id="wrapper">
 
 <main><div style="padding: 30px; margin: auto;">
+<br><br>
+<?php include 'back_btn.php'; ?>
+
 <center>
 
 <div id="piechart" style=""></div>
