@@ -36,6 +36,12 @@
   	  <label>Confirm password</label>
   	  <input type="password" name="password_2">
   	</div>
+	  
+	  <div class="input-group">
+  	  <label>Monthly Income</label>
+  	  <input type="text" name="monthly_income">
+	  </div>
+	  
   	<div class="input-group">
   	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
