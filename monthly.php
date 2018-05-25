@@ -34,6 +34,8 @@
 
 <center>
 
+<form><button style="color:white;margin: 0 10px;" type="submit" name="add_daily">Edit Income</button></p></form>
+
 <div id="piechart" style=""></div>
   
 </center>
